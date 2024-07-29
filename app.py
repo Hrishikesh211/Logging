@@ -1,6 +1,6 @@
 import logging
 import sys
-
+print("Starting The Process")
 # Create a logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -25,3 +25,5 @@ logger.addHandler(stderr_handler)
 logger.debug('This is a debug message')
 logger.info('This is an info message')
 logger.error('This is an error message')
+
+print("Sucessfully done")
