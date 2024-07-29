@@ -87,10 +87,4 @@ stages:
               deploymentMethod: 'zipDeploy'
               takeAppOfflineFlag: true
               enableXmlTransform: false
-              enableCustomDeployment: true
               verbose: true
-
-            inputs:
-              azureSubscription: $(azureServiceConnectionId)
-              appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
