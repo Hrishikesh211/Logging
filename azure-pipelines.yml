@@ -76,16 +76,20 @@ stages:
           - task: UsePythonVersion@0
             inputs:
               versionSpec: '$(pythonVersion)'
-            displayName: 'Use Python version'
+            displayName: 'Use Python $(pythonVersion)'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : loggingtest4'
+            displayName: 'Deploy Azure Web App : $(webAppName)'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              deploymentMethod: 'zipDeploy'
+              takeAppOfflineFlag: true
+              enableXmlTransform: false
+              enableCustomDeployment: true
+              verbose: true
 
-            displayName: 'Deploy Azure Web App : loggingtest4'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
