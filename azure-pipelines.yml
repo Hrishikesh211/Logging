@@ -1,6 +1,6 @@
 # Python to Linux Web App on Azure
 # Build your Python project and deploy it to Azure as a Linux Web App.
-# Change python version to one thats appropriate for your application.
+# Change python version to one that's appropriate for your application.
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 pr: none
@@ -100,7 +100,6 @@ stages:
         enableXmlTransform: false
         enableCustomDeployment: true
         verbose: true
-              deploymentMethod: 'zipDeploy'
-              takeAppOfflineFlag: true
+
               enableXmlTransform: false
               verbose: true
