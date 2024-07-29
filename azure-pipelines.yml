@@ -19,7 +19,7 @@ variables:
   # Environment name
   environmentName: 'loggingtest4'
 
-  # Project root folder. Point to the folder containing manage.py file.
+  # Project root folder. Point to the folder containing app.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
   # Python version: 3.7
@@ -42,8 +42,7 @@ stages:
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
@@ -80,6 +79,12 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
+            displayName: 'Deploy Azure Web App : loggingtest4'
+            inputs:
+              azureSubscription: $(azureServiceConnectionId)
+              appName: $(webAppName)
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+
             displayName: 'Deploy Azure Web App : loggingtest4'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
