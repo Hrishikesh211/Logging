@@ -1,0 +1,22 @@
+[MASTER]
+extension-pkg-whitelist=
+ignore=CVS
+ignore-patterns=
+
+[MESSAGES CONTROL]
+disable=W0718
+
+[REPORTS]
+reports=no
+
+[BASIC]
+good-names=i,j,k,ex,Run,_
+
+[FORMAT]
+max-line-length=100
+
+[DESIGN]
+max-args=10
+
+[TYPECHECK]
+contextmanager-decorators=contextlib.contextmanager

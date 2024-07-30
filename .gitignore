@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and Databases
+*.log
+*.sqlite3
+
+# Dependency directories
+lib/
+libs/
+dist/
+build/
+egg-info/
+*.egg-info/
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+
+# Miscellaneous
+*.bak
+*.swp
+*.tmp
+*.tmp.*
+*~
+*.DS_Store
