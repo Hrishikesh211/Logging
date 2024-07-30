@@ -1,6 +1,5 @@
 """RMB Backend ChatBot Application"""
 
-
 import pysqlite3 as sqlite3
 import sys
 import os
